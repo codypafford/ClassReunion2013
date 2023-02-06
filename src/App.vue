@@ -4,6 +4,7 @@
     <div class="app-container">
       <RouterView />
     </div>
+    <small>Created by Cody Pafford</small>
   </main>
 </template>
 
