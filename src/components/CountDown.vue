@@ -1,7 +1,8 @@
 <template>
-    <div>
-        Count Down to 2013 class reunion
+    <div v-if="loaded" class="countdown-container">
+      <div>T-minus</div>
       <p>{{ days }} days {{ hours }} hours {{ minutes }} minutes {{ seconds }} seconds</p>
+      <div>until 2013 Class Reunion</div>
     </div>
   </template>
   
@@ -15,6 +16,7 @@
         hours: 0,
         minutes: 0,
         seconds: 0,
+        loaded: false
       };
     },
     mounted() {
@@ -30,6 +32,7 @@
           this.minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
           this.seconds = Math.floor((difference % (1000 * 60)) / 1000);
         }
+        this.loaded = true
       }, 1000);
     },
     beforeDestroy() {
@@ -43,7 +46,18 @@
 p {
     font-weight: bold;
     color: #f1592a;
-    font-size: 20px;
+    font-size: 18px;
+}
+
+div {
+  color: grey
+}
+
+.countdown-container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
 }
 </style>
 

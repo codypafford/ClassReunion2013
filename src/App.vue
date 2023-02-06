@@ -1,5 +1,5 @@
 <template>
-  <main>
+  <main class="app-container">
     <MainMenu />
     <div class="app-container">
       <RouterView />
@@ -25,7 +25,9 @@ export default {
 
 <style scoped>
 .app-container {
-  margin-top: 20px;
+  width: 100vw;
+  height:100vh;
+  /* overflow: hidden; */
 }
 </style>
 
