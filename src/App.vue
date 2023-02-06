@@ -4,11 +4,11 @@ import CountDown from './components/CountDown.vue';
 
 <template>
   <div class="app-container">
-    <p>
+    <p id="title">
       Welcome Mandarin High School 
     </p>
     <div>
-      <img src="/Mandarin_High_School_Logo.png" class="logo" alt="Mandarin logo" />
+      <img src="./Mandarin_High_School_Logo.png" class="logo" alt="Mandarin logo" />
     </div>
     <CountDown></CountDown>
     <p>
@@ -39,4 +39,7 @@ import CountDown from './components/CountDown.vue';
   cursor: pointer;
 }
 
+#title {
+  font-size: 25px;
+}
 </style>
