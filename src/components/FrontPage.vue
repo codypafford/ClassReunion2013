@@ -10,7 +10,7 @@
             <CountDown></CountDown>
         </div>
         <p>
-            Hosted by Jacob Hecht and Christian King
+            Hosted by President Jacob Hecht and VP Christian King
         </p>
         <a id="buy-tickets-link" href="https://venmo.com/" target="_blank">Still need to buy tickets?</a>
         <small>Buy your tickets now at a discounted price.</small>

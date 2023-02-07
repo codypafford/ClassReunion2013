@@ -18,6 +18,13 @@
       <p class="about__text">
         There will be plenty of food and drinks.
       </p>
+<!-- 
+      <ul>
+        <li>Dress Code: cocktail attire</li>
+        <li>There will be a cash bar</li>
+        <li>Item 3</li>
+      </ul> -->
+
     </div>
   </template>
   
