@@ -8,6 +8,8 @@
         This is a great opportunity to reconnect with classmates and see how everyone has been doing over the years.
       </p>
 
+      <p>Party starts @7PM on May 20th</p>
+
       <p class="about__text">
         This event will be hosted at the Scottish Rite at <a target="_blank" href="https://goo.gl/maps/GW2hbhm7HMJxgyeq9">965 Hubbard St, Jacksonville, FL 32206</a>
       </p>
