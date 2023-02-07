@@ -10,10 +10,11 @@
             <CountDown></CountDown>
         </div>
         <p>
-            Hosted by President Jacob Hecht and VP Christian King
+            Hosted by Pres. Jacob Hecht and VP Christian King
         </p>
-        <a id="buy-tickets-link" href="https://venmo.com/" target="_blank">Still need to buy tickets?</a>
+        <a id="buy-tickets-link" href="https://account.venmo.com/u/MHS2013_" target="_blank">Still need to buy tickets?</a>
         <small>Buy your tickets now at a discounted price.</small>
+        
     </div>
 </template>
 
