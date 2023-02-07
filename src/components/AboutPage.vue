@@ -1,14 +1,13 @@
 <template>
     <div class="about">
       <h1 class="about__title">Class Reunion 2013</h1>
+      <p class="subheader">Party starts @7PM on May 20th</p>
       <p class="about__text">
         Join us as we come together to reminisce and catch up with old friends at our 2013 class reunion!
       </p>
       <p class="about__text">
         This is a great opportunity to reconnect with classmates and see how everyone has been doing over the years.
       </p>
-
-      <p>Party starts @7PM on May 20th</p>
 
       <p class="about__text">
         This event will be hosted at the Scottish Rite at <a target="_blank" href="https://goo.gl/maps/GW2hbhm7HMJxgyeq9">965 Hubbard St, Jacksonville, FL 32206</a>
@@ -28,6 +27,7 @@
       flex-direction: column;
       align-items: center;
       text-align: center;
+      padding: 10px;
     }
     
     .about__title {
@@ -39,6 +39,12 @@
     .about__text {
       font-size: 18px;
       margin-bottom: 20px;
+    }
+
+    .subheader {
+      font-size: 22px;
+      font-weight: bold;
+      margin-bottom: 15px;
     }
   </style>
   
