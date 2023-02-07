@@ -1,6 +1,9 @@
 <template>
     <div class="about">
-      <h1 class="about__title">Class Reunion 2013</h1>
+      <Transition name="slide-fade">
+        <h1 class="about__title" v-if="loaded">Class Reunion 2013</h1>
+      </Transition>
+
       <p class="subheader">Party starts @7PM on May 20th</p>
       <p class="about__text">
         Join us as we come together to reminisce and catch up with old friends at our 2013 class reunion!
@@ -20,8 +23,37 @@
       </p>
     </div>
   </template>
+
+<script>
+  export default {
+    name: "AboutPage",
+    data() {
+      return {
+        loaded: false
+      }
+    },
+    mounted() {
+      this.loaded = true
+    },
+  };
+</script>
   
   <style>
+    /* For transitions */
+    .slide-fade-enter-active {
+      transition: all 0.3s ease-out;
+    }
+
+    .slide-fade-leave-active {
+      transition: all 4s cubic-bezier(1, 0.5, 0.8, 1);
+    }
+
+    .slide-fade-enter-from,
+    .slide-fade-leave-to {
+      transform: translateX(300px);
+      opacity: 0;
+    }
+
     .about {
       display: flex;
       flex-direction: column;

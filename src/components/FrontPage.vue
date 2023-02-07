@@ -1,8 +1,11 @@
 <template>
     <div class="container">
-        <p id="title">
-            Welcome Mandarin High School
-        </p>
+        <Transition name="bounce">
+            <p id="title" v-if="loaded">
+                Welcome Mandarin High School
+            </p>
+        </Transition>
+
         <div>
             <img src="/Mandarin_High_School_Logo.png" class="logo" alt="Mandarin logo" />
         </div>
@@ -23,12 +26,39 @@ import CountDown from './CountDown.vue';
 // TODO: add 1 hour or minus? depending on daylite savings
 export default {
     components: {
-        CountDown
+        CountDown,
+    },
+    data() {
+      return {
+        loaded: false
+      }
+    },
+    mounted() {
+      this.loaded = true
     },
 };
 </script>
 
 <style scoped>
+/* Transitions */
+.bounce-enter-active {
+  animation: bounce-in 0.5s;
+}
+.bounce-leave-active {
+  animation: bounce-in 0.5s reverse;
+}
+@keyframes bounce-in {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.25);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
 .container {
     margin-left: auto;
     margin-right: auto;
