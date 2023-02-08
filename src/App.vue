@@ -28,7 +28,8 @@ export default {
 .app-container {
   width: 100vw;
   height:100vh;
-  /* overflow: hidden; */
+  align-items: center;
+  overflow-x: hidden; 
 }
 </style>
 
