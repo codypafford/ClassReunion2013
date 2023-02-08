@@ -19,7 +19,7 @@ export default {
   <div id="header">
     <div :class="'home' === this.$route.name ? 'active-header-tiles' : 'header-tiles'" @click="switchDataShown('home')">Home</div>
     <div :class="'about' === this.$route.name ? 'active-header-tiles' : 'header-tiles'" @click="switchDataShown('about')">More Info</div>
-    <div v-if="false" :class="'yearbook' === this.$route.name ? 'active-header-tiles' : 'header-tiles'" @click="switchDataShown('yearbook')">Yearbook Photos</div>
+    <div :class="'yearbook' === this.$route.name ? 'active-header-tiles' : 'header-tiles'" @click="switchDataShown('yearbook')">Yearbook Photos</div>
     <div v-if="false" :class="'memories2013' === this.$route.name ? 'active-header-tiles' : 'header-tiles'" @click="switchDataShown('memories2013')">2013 Memories</div>
     <div v-if="false" :class="'inlovingmemory' === this.$route.name ? 'active-header-tiles' : 'header-tiles'" @click="switchDataShown('inlovingmemory')">In Loving Memory</div>
   </div>
