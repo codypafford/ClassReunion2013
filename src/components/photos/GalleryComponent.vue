@@ -34,7 +34,7 @@ export default {
             photos: [],
             loaded: false,
             pageNumber: 1,
-            numberPerPage: 1
+            numberPerPage: 2
         };
     },
     mounted() {
