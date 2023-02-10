@@ -26,7 +26,9 @@
         referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
     <p class="about__text">
-      There will be plenty of food and drinks to enjoy as we come together to reminisce and catch up with old friends at our 2013 class reunion!
+      Your ticket includes a fantastic selection of food and non-alcoholic drinks to enjoy while we catch up and reminisce with old friends. 
+      And for those who prefer something stronger, we will also have a cash bar available serving alcoholic beverages. 
+      Get ready for a night filled with good company, good food, and good memories!
     </p>
     <p class="subheader">Get ready for the most iconic class reunion that Mandarin High School has ever seen!</p>
   </div>
