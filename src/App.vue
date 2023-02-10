@@ -1,11 +1,11 @@
 <template>
   <main class="app-container">
     <MainMenu />
-    <div class="app-container">
+    <div>
       <RouterView />
     </div>
-    <small>Created by Cody Pafford</small>
   </main>
+  
 </template>
 
 <script>
@@ -27,7 +27,7 @@ export default {
 <style scoped>
 .app-container {
   width: 100vw;
-  height:100vh;
+  height: 100vh;
 }
 </style>
 

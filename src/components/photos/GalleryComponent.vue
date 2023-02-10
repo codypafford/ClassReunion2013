@@ -1,14 +1,16 @@
 <template>
     <div>
+        <span id="page-number">Page {{ pageNumber }}</span>
         <div class="photo-container" v-if="loaded">
             <div class="photo-wrap" v-for="photo in photos" :key="photo">
                 <img :src="photo" alt="Image" :style="{ maxWidth: photoMaxWidth, height: photoHeight }">
             </div>
+            <div class="btn-container">
+                <button class="prev-btn" @click="prevPage">Previous</button>
+                <button class="next-btn" @click="nextPage">Next</button>
+            </div>
         </div>
-        <div class="btn-container">
-            <button class="prev-btn"  @click="prevPage">Previous</button>
-            <button class="next-btn" @click="nextPage">Next</button>
-        </div>
+
     </div>
 </template>
 
@@ -50,7 +52,7 @@ export default {
             if (this.pageNumber === 1) {
                 index = 1
             } else {
-                index = (((this.pageNumber-1) * this.numberPerPage) + 1)
+                index = (((this.pageNumber - 1) * this.numberPerPage) + 1)
             }
             console.log('index: ' + index)
             let count = 0
@@ -90,8 +92,8 @@ export default {
 <style>
 .btn-container {
     width: 100%;
-    position:absolute;
-    bottom:0;   
+    position: absolute;
+    bottom: 0;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -99,7 +101,8 @@ export default {
     margin-right: auto;
 }
 
-.prev-btn, .next-btn {
+.prev-btn,
+.next-btn {
     color: white;
     background: #f1592a;
     margin: 5px;
@@ -125,5 +128,9 @@ img {
 
 img:hover {
     filter: drop-shadow(0 0 2em #42b883aa);
+}
+
+#page-number {
+    margin-left: 10px;
 }
 </style>

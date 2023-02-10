@@ -17,7 +17,7 @@
         </p>
         <a id="buy-tickets-link" href="https://account.venmo.com/u/MHS2013_" target="_blank">Still need to buy tickets?</a>
         <small>Buy your tickets now at a discounted price.</small>
-        
+        <small class="footer">Created by Cody Pafford</small>
     </div>
 </template>
 
@@ -69,6 +69,8 @@ export default {
     margin-left: auto;
     margin-right: auto;
     overflow: hidden;
+    padding-left: 5px;
+    padding-right: 5px;
 }
 
 .logo {
@@ -93,5 +95,13 @@ export default {
 
 #title {
     font-size: 25px;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  margin-top: 20px;
+  margin-left: 15px;
 }
 </style>
