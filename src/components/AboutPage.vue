@@ -26,9 +26,9 @@
         referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
     <p class="about__text">
-      Your ticket includes a fantastic selection of food and non-alcoholic drinks to enjoy while we catch up and reminisce with old friends. 
-      And for those who prefer something stronger, we will also have a cash bar available serving alcoholic beverages. 
-      Get ready for a night filled with good company, good food, and good memories!
+      Your ticket includes an exclusive venue, DJ, and a selection of foods and non-alcoholic drinks to enjoy while 
+      catching up and reminiscing with old friends. For those who prefer something stronger, a cash bar will be available throughout 
+      the night, serving alcoholic beverages to keep the party going. Get ready for a night filled with dancing, good company, food, and drinks!
     </p>
     <p class="subheader">Get ready for the most iconic class reunion that Mandarin High School has ever seen!</p>
   </div>
@@ -87,6 +87,7 @@ export default {
   font-size: 22px;
   font-weight: bold;
   margin-bottom: 15px;
+  padding: 5px;
 }
 
 .map-container {
