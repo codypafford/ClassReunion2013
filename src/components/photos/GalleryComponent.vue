@@ -3,7 +3,7 @@
         <span id="page-number">Page {{ pageNumber }}</span>
         <div class="photo-container" v-if="loaded">
             <div class="photo-wrap" v-for="photo in photos" :key="photo">
-                <img :src="photo" alt="Image" :style="{ maxWidth: photoMaxWidth, height: photoHeight }">
+                <img :src="photo" alt="Image" :style="{ width: photoWidth, height: photoHeight }">
             </div>
             <div class="btn-container">
                 <button class="prev-btn" @click="prevPage">Previous</button>
@@ -22,7 +22,7 @@ export default {
             type: String,
             required: true
         },
-        photoMaxWidth: {
+        photoWidth: {
             type: String,
             required: true
         },
@@ -36,7 +36,7 @@ export default {
             photos: [],
             loaded: false,
             pageNumber: 1,
-            numberPerPage: 2
+            numberPerPage: 3
         };
     },
     mounted() {
@@ -54,11 +54,9 @@ export default {
             } else {
                 index = (((this.pageNumber - 1) * this.numberPerPage) + 1)
             }
-            console.log('index: ' + index)
             let count = 0
             while (photoExists && count < this.numberPerPage) {
                 let imgUrl = new URL(`../../assets/${this.folder}/${this.folder}_photo_${index}.png`, import.meta.url).href
-                console.log(imgUrl)
                 if (imgUrl.includes('undefined')) {
                     photoExists = false
                 } else {
@@ -67,7 +65,6 @@ export default {
                     count++
                 }
             }
-
             if (this.photos.length === 0 && this.pageNumber > 1) {
                 this.pageNumber = this.pageNumber - 1
                 this.createPhotosArray()
@@ -92,7 +89,6 @@ export default {
 <style>
 .btn-container {
     width: 100%;
-    position: absolute;
     bottom: 0;
     display: flex;
     flex-wrap: wrap;
@@ -110,6 +106,12 @@ export default {
     min-width: 100px;
 }
 
+.prev-btn:hover,
+.next-btn:hover {
+    color: black;
+    background: white;
+}
+
 .photo-container {
     display: flex;
     flex-wrap: wrap;
@@ -117,13 +119,15 @@ export default {
 }
 
 .photo-wrap {
-    margin: 10px;
+    margin: 7px;
 }
 
 img {
     padding: 1.5em;
     will-change: filter;
     transition: filter 300ms;
+    background-color: grey;
+    border-radius: 20px;
 }
 
 img:hover {

@@ -18,7 +18,7 @@ export default {
 </script>
     
 <template>
-    <GalleryComponent folder="Yearbook" photoMaxWidth="300px" photoHeight="6em"></GalleryComponent>
+    <GalleryComponent folder="Yearbook" photoWidth="6em" photoHeight="6em"></GalleryComponent>
 </template>  
 
 <style scoped>
