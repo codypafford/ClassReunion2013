@@ -3,14 +3,17 @@
         <span id="page-number">Page {{ pageNumber }}</span>
         <div class="photo-container" v-if="loaded">
             <div class="photo-wrap" v-for="photo in photos" :key="photo">
-                <img :src="photo" alt="Image" :style="{ width: photoWidth, height: photoHeight }">
+                <img :src="photo" alt="Image" @click="toggleFullscreen(photo)" :style="{ width: photoWidth, height: photoHeight }">
             </div>
             <div class="btn-container">
                 <button class="prev-btn" @click="prevPage">Previous</button>
                 <button class="next-btn" @click="nextPage">Next</button>
             </div>
         </div>
-
+        <div class="fullscreen" v-if="fullscreenPhoto">
+            <img :src="fullscreenPhoto" alt="Fullscreen Image">
+            <button class="close-btn" @click="closeFullscreen">Exit</button>
+        </div>
     </div>
 </template>
 
@@ -36,7 +39,8 @@ export default {
             photos: [],
             loaded: false,
             pageNumber: 1,
-            numberPerPage: 3
+            numberPerPage: 6,
+            fullscreenPhoto: ''
         };
     },
     mounted() {
@@ -44,6 +48,12 @@ export default {
         this.loaded = true
     },
     methods: {
+        toggleFullscreen(photo) {
+            this.fullscreenPhoto = this.fullscreenPhoto === photo ? '' : photo;
+        },
+        closeFullscreen() {
+            this.fullscreenPhoto = '';
+        },
         async createPhotosArray() {
             this.photos = []
 
@@ -136,5 +146,37 @@ img:hover {
 
 #page-number {
     margin-left: 10px;
+}
+
+.fullscreen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.fullscreen img {
+    max-width: 80%;
+    max-height: 80%;
+}
+
+.close-btn {
+    position: absolute;
+    top: 35px;
+    right: 35px;
+    background-color: white;
+    border: none;
+    border-radius: 50%;
+    padding: 10px;
+    font-size: 1.5em;
+}
+
+.close-btn:hover {
+    background-color: rgb(190, 183, 183);
 }
 </style>
