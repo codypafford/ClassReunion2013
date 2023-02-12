@@ -14,7 +14,7 @@ export default {
   mounted() {
   },
   created() {
-    // this.isMobile = this.$isMobile()
+    this.isMobile = this.$isMobile()
   },
   methods: {
   }
