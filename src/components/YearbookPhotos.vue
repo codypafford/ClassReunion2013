@@ -12,7 +12,7 @@ export default {
     }
   },
   created() {
-    this.isMobile = this.$isMobile()
+    // this.isMobile = this.$isMobile()
   },
   mounted() {
   },
