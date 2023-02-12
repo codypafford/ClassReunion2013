@@ -47,7 +47,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 /* For transitions */
 .slide-fade-enter-active {
   transition: all 0.3s ease-out;

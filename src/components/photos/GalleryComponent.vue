@@ -3,7 +3,7 @@
         <span id="page-number">Page {{ pageNumber }}</span>
         <div class="photo-container" v-if="loaded">
             <div class="photo-wrap" v-for="photo in photos" :key="photo">
-                <img :src="photo" alt="Image" @click="toggleFullscreen(photo)" :style="{ width: photoWidth, height: photoHeight }">
+                <img :style="{ width: photoWidth, height: photoHeight }" id="small-img" :src="photo" alt="Image" @click="toggleFullscreen(photo)">
             </div>
             <div class="btn-container">
                 <button class="prev-btn" @click="prevPage">Previous</button>
@@ -33,6 +33,10 @@ export default {
             type: String,
             required: true
         },
+        fileExtension: {
+            type: String,
+            required: true
+        }
     },
     data() {
         return {
@@ -66,7 +70,7 @@ export default {
             }
             let count = 0
             while (photoExists && count < this.numberPerPage) {
-                let imgUrl = new URL(`../../assets/${this.folder}/${this.folder}_photo_${index}.png`, import.meta.url).href
+                let imgUrl = new URL(`../../assets/${this.folder}/${this.folder}_photo_${index}${this.fileExtension}`, import.meta.url).href
                 if (imgUrl.includes('undefined')) {
                     photoExists = false
                 } else {
@@ -96,7 +100,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .btn-container {
     width: 100%;
     bottom: 0;
@@ -130,10 +134,12 @@ export default {
 
 .photo-wrap {
     margin: 7px;
+    width: fit-content;
+    height: fit-content
 }
 
 img {
-    padding: 1.5em;
+    padding: .3em;
     will-change: filter;
     transition: filter 300ms;
     background-color: grey;

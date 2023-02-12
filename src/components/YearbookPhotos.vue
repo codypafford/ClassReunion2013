@@ -8,7 +8,11 @@ export default {
   },
   data() {
     return {
+      isMobile: true
     }
+  },
+  created() {
+    this.isMobile = this.$isMobile()
   },
   mounted() {
   },
@@ -18,7 +22,8 @@ export default {
 </script>
     
 <template>
-    <GalleryComponent folder="Yearbook" photoWidth="6em" photoHeight="6em"></GalleryComponent>
+    <GalleryComponent folder="Yearbook" :photoWidth="isMobile ? '100px' : '250px'" 
+      :photoHeight="isMobile ? '100px' : '250px'" fileExtension=".png"></GalleryComponent>
 </template>  
 
 <style scoped>
