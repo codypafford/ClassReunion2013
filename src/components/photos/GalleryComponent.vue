@@ -1,5 +1,7 @@
 <template>
     <div>
+        <div v-if="$isMobile()">Mobile View</div>
+        <div v-else>Desktop View</div>
         <span id="page-number">Page {{ pageNumber }}</span>
         <div class="photo-container" v-if="loaded">
             <div class="photo-wrap" v-for="photo in photos" :key="photo">
